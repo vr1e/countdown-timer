@@ -77,7 +77,7 @@ const App: FunctionComponent = () => {
             </header>
             <div className='countdown-timer'>
               {isRunning !== null && (
-                <div className='display-time'>
+                <div className='display-time' data-testid='display-time'>
                   <div className='time-elapsed' ref={timeElapsed}></div>
                 </div>
               )}
