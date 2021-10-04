@@ -14,10 +14,9 @@ const App: FunctionComponent = () => {
   const [message, setMessage] = useState('');
   const [enteredTime, setEnteredTime] = useState('');
 
+  /* updates entered time value to 1/10 of a second on play */
   useEffect(() => {
-    let interval: any = null;
-
-    if (time === 0) clearInterval(interval);
+    let interval: NodeJS.Timer;
 
     if (isRunning) {
       if (time === 0) {
@@ -27,13 +26,12 @@ const App: FunctionComponent = () => {
       interval = setInterval(() => {
         setTime((prevTime) => prevTime - 1);
       }, 100);
-    } else {
-      clearInterval(interval);
     }
 
     return () => clearInterval(interval);
   }, [isRunning]);
 
+  /* updates visual elapsed time on time change and stops at time expired */
   useEffect(() => {
     const percentage = Math.round((time / parseInt(enteredTime)) * 100) / 10;
     timeElapsed.current?.style.setProperty('height', `${percentage}%`);
@@ -49,7 +47,8 @@ const App: FunctionComponent = () => {
       setIsRunning(true);
       setMessage('');
     } else {
-      setMessage('Please enter time using only numbers');
+      setTime(0);
+      setMessage('Please enter time using only positive numbers');
     }
   }
 
