@@ -17,7 +17,7 @@ export default function TimeEnter({	enteredTime, enterTimeValue, play }: Props) 
 			required
 			value={enteredTime}
 			placeholder='Type in time in seconds'
-			onChange={enterTimeValue}
+			onInput={enterTimeValue}
 			onKeyPress={handleKeyPress}
 		/>
 	);
