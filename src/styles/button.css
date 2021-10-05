@@ -1,6 +1,6 @@
 button {
   cursor: pointer;
-  background-color: transparent;
+  background-color: white;
   border: 1px solid var(--body-txt);
   font-size: 1.5rem;
   line-height: 0.8;

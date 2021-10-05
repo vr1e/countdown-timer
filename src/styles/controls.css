@@ -1,0 +1,20 @@
+.controls {
+	display: flex;
+	gap: 1rem;
+	padding: 0.3rem 0;
+}
+
+.counter input,
+.timeout {
+	border: 1px solid var(--body-txt);
+	background-color: white;
+	/* box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3); */
+	box-sizing: border-box;
+	font-size: 1.4rem;
+	font-weight: bold;
+	height: 43px;
+	outline: 0;
+	padding: 0.5rem;
+	text-align: center;
+	width: 100%;
+}

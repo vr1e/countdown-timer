@@ -1,9 +1,12 @@
+import { useContext } from 'preact/hooks';
+import { CountdownContext } from '../../contexts/CountdownContext';
 import '../../styles/validation.css';
 
-interface Props {
-	message: string;
-}
-
-export default function ValidationMessage({ message }: Props) {
-	return <div className='validation-message'>{message}</div>;
+export default function ValidationMessage() {
+	const appContext = useContext(CountdownContext);
+	return (
+		<div>
+			<div className='validation-message'>{appContext.message}</div>
+		</div>
+	);
 }
