@@ -1,11 +1,7 @@
 :root {
   --body-txt: #343a40;
-  /* --items-dark: #495057; */
-  /* --items-light: #6c757d; */
-  /* --items-lighter: #adb5bd; */
-  /* --validation-error: #e56b6f; */
+  --disabled: #d3d3d3;
   --validation: #ff7900;
-  /* --validation-success: #6a994e; */
   --elapsed-time: #90e0ef;
 }
 
@@ -69,19 +65,6 @@ h1 {
   display: flex;
   gap: 1rem;
   padding: 0.3rem 0;
-}
-
-.validation-message {
-  /* color: var(--validation-success); */
-  text-align: center;
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-top: 0.5rem;
-  display: block;
-}
-
-.validation-message.warning {
-  color: var(--validation);
 }
 
 @media (max-width: 600px) {

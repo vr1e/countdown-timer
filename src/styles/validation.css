@@ -1,0 +1,8 @@
+.validation-message {
+  text-align: center;
+  color: var(--validation);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+  display: block;
+}

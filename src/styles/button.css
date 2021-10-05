@@ -15,8 +15,8 @@ button {
 button:disabled,
 button:disabled:hover {
   cursor: not-allowed;
-  background-color: lightgrey;
-  border-color: lightgrey;
+  background-color: var(--disabled);
+  border-color: var(--disabled);
 }
 
 button:hover {
