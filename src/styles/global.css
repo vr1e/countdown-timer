@@ -60,8 +60,9 @@ h1 {
 
 .time-elapsed {
   background-color: var(--elapsed-time);
-  /* border-radius: 4px 4px 0 0; */
-  /* transition: height 0.3s linear; */
+  height: 100%;
+  transform-origin: bottom;
+  transform: scaleY(0);
 }
 
 .controls {

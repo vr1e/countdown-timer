@@ -34,8 +34,10 @@ const App: FunctionComponent = () => {
 
 	/* updates visual elapsed time on time change and stops at time expired */
 	useEffect(() => {
-		const percentage = Math.round((time / parseInt(enteredTime)) * 100) / 10;
-		timeElapsed.current?.style.setProperty('height', `${percentage}%`);
+		const percentage = `00${Math.round(
+			(time / parseInt(enteredTime)) * 100
+		)}`.slice(-3);
+		timeElapsed.current?.style.setProperty('transform', `scaleY(0.${percentage})`);
 
 		if (time === 0 && isRunning) {
 			stop();
@@ -61,7 +63,7 @@ const App: FunctionComponent = () => {
 		setIsRunning(null);
 		setEnteredTime('');
 		setTime(0);
-		timeElapsed.current?.style.setProperty('height', `0%`);
+		timeElapsed.current?.style.setProperty('transform', 'scaleY(0)');
 	}
 
 	function enterTimeValue(e: any) {
@@ -77,12 +79,10 @@ const App: FunctionComponent = () => {
 					</header>
 					<div className='countdown-timer'>
 						<div className='display-time'>
-							{isRunning !== null && (
-								<div
-									className='time-elapsed'
-									ref={timeElapsed}
-									data-testid='display-time'></div>
-							)}
+							<div
+								className='time-elapsed'
+								ref={timeElapsed}
+								data-testid='display-time'></div>
 						</div>
 
 						<div className='counter'>

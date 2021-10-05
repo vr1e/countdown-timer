@@ -61,6 +61,6 @@ describe('components', () => {
     const timeoutField = screen.queryByTestId('timeout');
     expect(timeoutField).not.toBeInTheDocument();
     const displayTime = screen.queryByTestId('display-time');
-    expect(displayTime).not.toBeInTheDocument();
+    expect(displayTime).toBeInTheDocument();
   });
 })
