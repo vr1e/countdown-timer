@@ -7,7 +7,7 @@ interface Props {
 export default function Timeout({ displayTime }: Props) {
 	const time = parseTime(displayTime);
 	return (
-		<div className='timeout'>
+		<div className='timeout' data-testid='timeout'>
 			<div>
 				<span>{time.hours}</span>:<span>{time.minutes}</span>:
 				<span>{time.seconds}</span>.<span>{time.deciseconds}</span>
