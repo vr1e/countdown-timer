@@ -1,25 +1,17 @@
 :root {
-	--body-txt: #343a40;
+	--bodytxt: #343a40;
 	--body-bg: #e9ecef;
-	--elm-bg: #fff;
-	--elm-border: #d9d9d9;
+	--elmbg: #fff;
+	--elmborder: #d9d9d9;
 	--disabled: #d3d3d3;
 	--validation: #ff7900;
-	--elapsed-time: #90e0ef;
-
-	/* dark */
-	/* --body-txt: #d3d3d3;
-	--body-bg: #161616;
-	--elm-bg: #333333;
-	--elm-border: transparent;
-	--disabled: #333;
-	--validation: #ff7900;
-	--elapsed-time: #66abff; */
+	--elapsedtime: #90e0ef;
 }
 
 body {
 	color: var(--body-txt);
 	background-color: var(--body-bg);
+	height: 100vh;
 }
 
 header {
@@ -32,8 +24,8 @@ h1 {
 
 .content-wrapper {
 	max-width: 360px;
-	padding: 2rem 6rem;
-	margin: 2rem auto;
+	padding: 4rem 6rem;
+	margin: auto;
 }
 
 .counter {
@@ -42,9 +34,9 @@ h1 {
 }
 
 .display-time {
-	background-color: var(--elm-bg);
+	background-color: var(--elmbg);
 	/* border-radius: 4px 4px 0 0; */
-	border: 1px solid var(--elm-border);
+	border: 1px solid var(--elmborder);
 	display: flex;
 	flex-direction: column-reverse;
 	height: 300px;
@@ -52,7 +44,7 @@ h1 {
 }
 
 .time-elapsed {
-	background-color: var(--elapsed-time);
+	background-color: var(--elapsedtime);
 	height: 100%;
 	transform-origin: bottom;
 	transform: scaleY(0);
@@ -66,5 +58,17 @@ h1 {
 		height: 100vh;
 		width: 100vw;
 		max-width: none;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bodytxt: #d3d3d3;
+		--body-bg: #161616;
+		--elmbg: #333333;
+		--elmborder: transparent;
+		--disabled: #333;
+		--validation: #ff7900;
+		--elapsedtime: #1a759f;
 	}
 }

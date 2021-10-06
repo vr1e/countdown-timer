@@ -6,9 +6,9 @@
 
 .counter input,
 .timeout {
-	border: 1px solid var(--elm-border);
-	background-color: var(--elm-bg);
-	color: var(--body-txt);
+	border: 1px solid var(--elmborder);
+	background-color: var(--elmbg);
+	color: var(--bodytxt);
 	/* box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3); */
 	box-sizing: border-box;
 	font-size: 1.4rem;
@@ -25,8 +25,8 @@
 }
 
 .manual-controls {
-	border: 1px solid var(--elm-border);
-	background-color: var(--elm-bg);
+	border: 1px solid var(--elmborder);
+	background-color: var(--elmbg);
 	margin-left: 0.5rem;
 	display: flex;
 	flex-direction: column;

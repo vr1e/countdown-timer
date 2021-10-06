@@ -1,11 +1,11 @@
 button {
   cursor: pointer;
-  background-color: var(--elm-bg);;
-  border: 1px solid var(--elm-border);
+  background-color: var(--elmbg);;
+  border: 1px solid var(--elmborder);
   font-size: 1.5rem;
   line-height: 0.8;
   outline: 0;
-  color: var(--body-txt);
+  color: var(--bodytxt);
   padding: 0.5rem;
 }
 
@@ -17,11 +17,11 @@ button:disabled:hover {
 }
 
 button:hover {
-  background: var(--body-txt);
+  background: var(--bodytxt);
 }
 
 button:hover svg {
-  fill: var(--elm-bg);;
+  fill: var(--elmbg);;
 }
 
 button:disabled:hover svg {
@@ -30,6 +30,7 @@ button:disabled:hover svg {
 
 button svg {
   height: .8rem;
+  fill: var(--bodytxt);
 }
 
 .play,
