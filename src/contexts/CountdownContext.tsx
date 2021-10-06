@@ -22,17 +22,20 @@ const CountdownContextProvider: FunctionComponent = props => {
 	const [isRunning, setIsRunning] = useState<null | boolean>(null);
 	const timeElapsed = useRef<HTMLDivElement>(null);
 
+	let inputTime: number;
+
 	/* updates entered time value to 1/10 of a second on play */
 	useEffect(() => {
 		let interval: NodeJS.Timer;
+		inputTime = parseInt(enteredTime);
 
 		if (isRunning) {
 			if (time === 0) {
-				setTime(parseInt(enteredTime) * 10);
+				setTime(inputTime * 10);
 			}
 
 			interval = setInterval(() => {
-				setTime(prevTime => prevTime - 1);
+				setTime(prevTime => (prevTime == 0 ? prevTime : prevTime - 1));
 			}, 100);
 		}
 
@@ -41,22 +44,24 @@ const CountdownContextProvider: FunctionComponent = props => {
 
 	/* updates visual elapsed time on time change and stops at time expired */
 	useEffect(() => {
-		const percentage = `00${Math.round(
-			(time / parseInt(enteredTime)) * 100
-		)}`.slice(-3);
+		inputTime = parseInt(enteredTime);
+
+		const percentage = `00${Math.round((time / inputTime) * 100)}`.slice(-3);
 		timeElapsed.current?.style.setProperty(
 			'transform',
 			`scaleY(0.${percentage})`
 		);
 
 		if (time === 0 && isRunning) {
-			stop();
 			setMessage('Your time expired!');
+			stop();
 		}
 	}, [time]);
 
 	function play() {
-		if (enteredTime && parseInt(enteredTime) > 0) {
+		inputTime = parseInt(enteredTime);
+
+		if (enteredTime && inputTime > 0) {
 			setIsRunning(true);
 			setMessage('');
 		} else {
@@ -80,6 +85,20 @@ const CountdownContextProvider: FunctionComponent = props => {
 		setEnteredTime(e.currentTarget.value);
 	}
 
+	function controlTimeValue(e: any) {
+		const action = e.currentTarget.name;
+		inputTime = parseInt(enteredTime);
+
+		if (action === 'plus')
+			setEnteredTime(prevTime =>
+				!inputTime ? '1' : `${parseInt(prevTime) + 1}`
+			);
+		if (action === 'minus')
+			setEnteredTime(prevTime =>
+				!inputTime ? '0' : `${parseInt(prevTime) - 1}`
+			);
+	}
+
 	return (
 		<CountdownContext.Provider
 			value={{
@@ -90,6 +109,7 @@ const CountdownContextProvider: FunctionComponent = props => {
 				pause,
 				stop,
 				enterTimeValue,
+				controlTimeValue,
 				enteredTime,
 				timeElapsed,
 			}}>

@@ -17,13 +17,29 @@ export default function TimeEnter() {
 	}
 
 	return (
-		<input
-			type='number'
-			required
-			value={appContext.enteredTime}
-			placeholder='Type in time in seconds'
-			onInput={appContext.enterTimeValue}
-			onKeyPress={handleKeyPress}
-		/>
+		<div className='time-input'>
+			<input
+				type='number'
+				required
+				value={appContext.enteredTime}
+				placeholder='Type in time in seconds'
+				onInput={appContext.enterTimeValue}
+				onKeyPress={handleKeyPress}
+			/>
+			<div className='manual-controls'>
+				<a
+					className='manual-control'
+					name='plus'
+					onClick={appContext.controlTimeValue}>
+					+
+				</a>
+				<a
+					className='manual-control'
+					name='minus'
+					onClick={appContext.controlTimeValue}>
+					-
+				</a>
+			</div>
+		</div>
 	);
 }

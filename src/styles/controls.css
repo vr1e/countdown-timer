@@ -6,8 +6,9 @@
 
 .counter input,
 .timeout {
-	border: 1px solid var(--body-txt);
-	background-color: white;
+	border: 1px solid var(--elm-border);
+	background-color: var(--elm-bg);
+	color: var(--body-txt);
 	/* box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3); */
 	box-sizing: border-box;
 	font-size: 1.4rem;
@@ -17,4 +18,22 @@
 	padding: 0.5rem;
 	text-align: center;
 	width: 100%;
+}
+
+.time-input {
+	display: flex;
+}
+
+.manual-controls {
+	border: 1px solid var(--elm-border);
+	background-color: var(--elm-bg);
+	margin-left: 0.5rem;
+	display: flex;
+	flex-direction: column;
+	padding: 0 0.5rem;
+	justify-content: center;
+}
+
+.manual-control {
+	cursor: pointer;
 }

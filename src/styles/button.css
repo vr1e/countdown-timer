@@ -1,15 +1,12 @@
 button {
   cursor: pointer;
-  background-color: white;
-  border: 1px solid var(--body-txt);
+  background-color: var(--elm-bg);;
+  border: 1px solid var(--elm-border);
   font-size: 1.5rem;
   line-height: 0.8;
   outline: 0;
   color: var(--body-txt);
   padding: 0.5rem;
-  /* border-radius: 6px; */
-  /* transition: background 400ms; */
-  /* box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3); */
 }
 
 button:disabled,
@@ -24,7 +21,7 @@ button:hover {
 }
 
 button:hover svg {
-  fill: white;
+  fill: var(--elm-bg);;
 }
 
 button:disabled:hover svg {
